@@ -15,6 +15,11 @@ export default ( state = [], action ) => {
                     return false
                 }
             } )
+        case actionTypes.EDIT_CONTACT:
+            // state.findIndex( action.contactIndex.index, n => {
+            //     console.log( n )
+            // } )
+            return state
         default:
             return state
     }

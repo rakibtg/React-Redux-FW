@@ -41,6 +41,9 @@ class App extends Component {
           </li>
         </div>
         <div className="col-md-2">
+          <button onClick={(e) => this.editContact(e, index)} className="btn btn-danger">
+            Edit
+          </button>
           <button onClick={(e) => this.deleteContact(e, index)} className="btn btn-danger">
             Remove
           </button>
@@ -52,6 +55,13 @@ class App extends Component {
   deleteContact(e, index){
     e.preventDefault();
     this.props.deleteContact(index);
+  }
+
+  editContact( e, index ) {
+    e.preventDefault()
+    this.props.editContact( {
+      index
+    } )
   }
 
   render() {
@@ -90,6 +100,7 @@ const mapStateToProps = ( state, ownProps ) => {
 const mapDispatchToProps = dispatch => {
   return {
     createContact: contact => dispatch( contactAction.createContact( contact ) ),
+    editContact  : contact => dispatch( contactAction.editContact( contact ) ),
     deleteContact: index   => dispatch( contactAction.deleteContact( index ) )
   }
 }

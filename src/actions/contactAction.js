@@ -13,3 +13,10 @@ export const deleteContact = id => {
         id: id
     }
 }
+
+export const editContact = index => {
+    return {
+        type: actionTypes.EDIT_CONTACT,
+        contactIndex: index
+    }
+}
