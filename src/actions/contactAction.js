@@ -14,6 +14,13 @@ export const deleteContact = id => {
     }
 }
 
+export const editContactForm = index => {
+    return {
+        type            : actionTypes.EDIT_CONTACT_FORM,
+        contactIndex    : index
+    }
+}
+
 export const editContact = index => {
     return {
         type: actionTypes.EDIT_CONTACT,
